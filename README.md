@@ -76,7 +76,7 @@ Use this section to outline areas that you want to continue focusing on in futur
 
 - [W3school](https://www.w3schools.com/howto/howto_js_topnav_responsive.asp) - This link helped me create the responsive navigation bar. I found the tutorial very useful for understanding how to implement a responsive navigation menu and will use similar techniques in future projects.
 - [Youtube](https://www.youtube.com/watch?v=JLfBo4p9ANw&t=307s) - This video tutorial helped me create an animated menu icon. It was particularly useful in demonstrating the step-by-step process of designing and animating the icon, which I will apply in future projects.
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
+- [Youtube](https://www.youtube.com/watch?v=2_E5uoiLCLY) - This video tutorial helped me to create a horizontal scrolling menu, The tutorial provided clear instructions on how to design and implement the scrolling functionality, which significantly enhanced my understanding of creating interactive and user-friendly menu layouts.
 
 **Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
 
