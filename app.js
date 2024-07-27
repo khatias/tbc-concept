@@ -10,22 +10,22 @@ function openNav() {
     nav.style.width = "0";
     header.style.backgroundColor = ''; 
     openIcon.classList.remove("openmenu");
+    openIcon.style.paddingLeft = '8px'
   } else {
     nav.style.width = "100%";
     header.style.backgroundColor = 'rgb(249, 250, 250)';
     openIcon.classList.add("openmenu");
+    openIcon.style.paddingLeft = '18px'
   }
 }
 
- // Function to toggle the display of a dropdown menu in mobile navigation,
-function dropDown(contentId, iconId) {
+function toggleDropDown(contentId, iconId, contentClass, iconClass) {
+  event.preventDefault()
   const dropdownContent = document.getElementById(contentId);
   const dropdownIcon = document.getElementById(iconId);
 
-
-  const allDropdownContents = document.querySelectorAll('.dropdown-content');
-  const allDropdownIcons = document.querySelectorAll('.drop-down-icon');
-
+  const allDropdownContents = document.querySelectorAll(contentClass);
+  const allDropdownIcons = document.querySelectorAll(iconClass);
 
   allDropdownContents.forEach((content, index) => {
     if (content.id !== contentId) {
@@ -35,11 +35,11 @@ function dropDown(contentId, iconId) {
     }
   });
 
-
   if (dropdownContent.style.display === "flex") {
     dropdownContent.style.display = "none";
     dropdownContent.style.maxHeight = "0";
     dropdownIcon.style.transform = "rotate(0deg)";
+    
   } else {
     dropdownContent.style.display = "flex";
     dropdownContent.style.maxHeight = dropdownContent.scrollHeight + "px";
@@ -47,40 +47,34 @@ function dropDown(contentId, iconId) {
   }
 }
 
+
  // Function to toggle the display of a desktop dropdown menu
 function desktopDropDown(contentId) {
   var dropdowns = document.querySelectorAll('.desktop-dropdown-content');
   const headerBgImage = document.getElementById('headerBgImage');
-
   var dropdownButtons = document.querySelectorAll('.dropbtn');
   
 
   dropdowns.forEach(function(dropdown) {
     if (dropdown.id === contentId) {
-
       dropdown.style.display = (dropdown.style.display === 'flex') ? 'none' : 'flex';
       
-
       if (dropdown.style.display === 'flex') {
-        headerBgImage.style.display = 'block';
+        headerBgImage.style.display = 'block';  
       } else {
         headerBgImage.style.display = 'none';
       }
     } else {
-
-      dropdown.style.display = 'none';
-      
+      dropdown.style.display = 'none';   
     }
   });
-  
-  
 
   dropdownButtons.forEach(function(button) {
-    button.classList.remove('active');
+    button.classList.remove('dropdown-active');
   });
 
   var clickedButton = document.querySelector(`.dropbtn[onclick="desktopDropDown('${contentId}')"]`);
-  clickedButton.classList.add('active');
+  clickedButton.classList.add('dropdown-active');
 }
 
 
@@ -228,17 +222,12 @@ awards.forEach(award => {
 });
 
 
-
-
-
-
-
 const initSlider = (containerId, scrollbarId, thumbId) => {
   const container = document.getElementById(containerId);
   const slideButtons = document.querySelectorAll(`.${containerId}-button`);
   const sliderScrollbar = document.getElementById(scrollbarId);
   const scrollBarThumb = document.getElementById(thumbId);
-  const cards = container.querySelectorAll(".offer-card, .product-card, .award-card"); // Select both types of cards
+  const cards = container.querySelectorAll(".offer-card, .product-card, .award-card"); 
   const maxScrollLeft = container.scrollWidth - container.clientWidth;
 
   // Calculate the width of one card
@@ -273,7 +262,6 @@ const initSlider = (containerId, scrollbarId, thumbId) => {
   // Slide Images according to the slide button click
   slideButtons.forEach(button => {
     button.addEventListener("click", () => {
-      console.log("hello")
       slideButtons.forEach(btn => btn.classList.remove('active'));
       const direction = button.id.includes("prev") ? -1 : 1;
      
@@ -287,31 +275,27 @@ const initSlider = (containerId, scrollbarId, thumbId) => {
   let startX;
   let scrollLeft;
 
-  cards.forEach(card => {
-    card.addEventListener('mousedown', (e) => {
-      isDragging = true;
-      startX = e.pageX - container.offsetLeft;
-      scrollLeft = container.scrollLeft;
-      e.preventDefault();
-    });
+  container.addEventListener('mousedown', (e) => {
+    isDragging = true;
+    startX = e.pageX - container.offsetLeft;
+    scrollLeft = container.scrollLeft;
+    e.preventDefault();
+  });
 
-    card.addEventListener('mouseleave', () => {
-      isDragging = false;
-    });
+  container.addEventListener('mouseleave', () => {
+    isDragging = false;
+  });
 
-    card.addEventListener('mouseup', () => {
-      isDragging = false;
-    });
+  container.addEventListener('mouseup', () => {
+    isDragging = false;
+  });
 
-    card.addEventListener('mousemove', (e) => {
-      if (!isDragging) return;
+  container.addEventListener('mousemove', (e) => {
+    if (!isDragging) return;
 
-      const x = e.pageX - container.offsetLeft;
-      const walk = (x - startX) * 2;
-      container.scrollLeft = scrollLeft - walk;
-      
-
-    });
+    const x = e.pageX - container.offsetLeft;
+    const walk = (x - startX);
+    container.scrollLeft = scrollLeft - walk;
   });
 
   // Update scrollbar thumb position based on image scroll
@@ -324,10 +308,9 @@ const initSlider = (containerId, scrollbarId, thumbId) => {
   container.addEventListener("scroll", updateScrollThumbPosition);
 };
 
-// Initialize sliders for offers and products
+// Initialize sliders for offers, products, and awards
 window.addEventListener("load", () => {
   initSlider('offers-container', 'offers-sliderScrollBar', 'offers-scrollBarThumb');
   initSlider('products-container', 'products-sliderScrollBar', 'products-scrollBarThumb');
   initSlider('awards-container', 'awards-sliderScrollBar', 'awards-scrollBarThumb');
-  // initSlider('products-cardsContainer', 'products-slider-scrollbar', 'products-scroll-bar-thumb');
 });
