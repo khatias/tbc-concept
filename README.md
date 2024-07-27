@@ -11,41 +11,40 @@ This project is part of the selection process for the TBC IT Academy course. The
 - [My process](#my-process)
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
   - [Useful resources](#useful-resources)
 - [Author](#author)
-- [Acknowledgments](#acknowledgments)
 
-**Note: Delete this note and update the table of contents based on what sections you keep.**
+
 
 ## Overview
 
 ### The challenge
 
-Users should be able to:
+Develop a website inspired by TBC Concept with these criteria:
 
-- View the optimal layout for the site depending on their device's screen size
-- See hover states for all interactive elements on the page
-- Receive an error message when the `form` is submitted if:
-  - Any `input` field is empty. The message for this error should say *"[Field Name] cannot be empty"*
-  - The email address is not formatted correctly (i.e. a correct email address should have this structure: `name@host.tld`). The message for this error should say *"Looks like this is not an email"*
+  - Responsive Design: Ensure the layout adjusts optimally across various devices.
+  - Interactive Feedback: Display hover states for all interactive elements.
+ - Slider Functionality: Include a functional slider that operates smoothly.
+ - Pixel-Perfect Design: Maintain precise visual alignment and consistency throughout the site.
+
+
 
 ### Screenshot
 
 ![](./screenshot.jpg)
+![image](https://github.com/user-attachments/assets/30cd2bf6-fc06-40e2-904d-b96dc0e39f4b)
+![image](https://github.com/user-attachments/assets/27170b4d-f58e-41c5-a232-a68b6d6ee36f)
 
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
+https://github.com/user-attachments/assets/d06471e4-d77b-46e8-b2b7-863dc5446fd3
 
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it. 
-
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
-
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
+![image](https://github.com/user-attachments/assets/48a01ef1-611a-4e55-97b5-da1bace8ec34)
+![image](https://github.com/user-attachments/assets/b2a6e914-b4ea-40c4-8fe4-b7a98affdc4d)
+![image](https://github.com/user-attachments/assets/c6566639-494f-4751-ad43-3ea25ce6fd01)
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Solution URL here](https://tbcconcept.ge/ge)
+- Live Site URL: [Live site URL here](https://khatias.github.io/tbc-concept/)
 
 ## My process
 
@@ -56,11 +55,9 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 - Flexbox
 - CSS Grid
 - Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
+- Javascript
 - [Next.js](https://nextjs.org/) - React framework
 - [Styled Components](https://styled-components.com/) - For styles
-
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
 
 ### What I learned
 
@@ -70,12 +67,6 @@ Horizontal Scrolling Menu: I learned how to create a horizontal scrolling menu u
 
 
 
-### Continued development
-
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
-
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
-
 ### Useful resources
 
 - [W3school](https://www.w3schools.com/howto/howto_js_topnav_responsive.asp) - This link helped me create the responsive navigation bar. I found the tutorial very useful for understanding how to implement a responsive navigation menu and will use similar techniques in future projects.
@@ -84,7 +75,7 @@ Use this section to outline areas that you want to continue focusing on in futur
 - [Youtubel](https://www.youtube.com/watch?v=PsNaoDhzQm0) - The tutorial guided me on how to disable the default scroll behavior and add my own custom scroll functionality using JavaScript.
 
 
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
+
 
 ## Author
 
@@ -92,9 +83,3 @@ Use this section to outline areas that you want to continue focusing on in futur
 - Twitter - [khatiaS1996](https://x.com/khatiaS1996)
 
 
-
-## Acknowledgments
-
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
-
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
