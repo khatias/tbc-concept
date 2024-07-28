@@ -49,23 +49,23 @@ function toggleDropDown(contentId, iconId, contentClass, iconClass) {
 
 
  // Function to toggle the display of a desktop dropdown menu
-function desktopDropDown(contentId) {
+ function desktopDropDown(contentId) {
   var dropdowns = document.querySelectorAll('.desktop-dropdown-content');
   const headerBgImage = document.getElementById('headerBgImage');
   var dropdownButtons = document.querySelectorAll('.dropbtn');
-  
+
 
   dropdowns.forEach(function(dropdown) {
     if (dropdown.id === contentId) {
       dropdown.style.display = (dropdown.style.display === 'flex') ? 'none' : 'flex';
-      
+
       if (dropdown.style.display === 'flex') {
-        headerBgImage.style.display = 'block';  
+        headerBgImage.style.display = 'block';
       } else {
         headerBgImage.style.display = 'none';
       }
     } else {
-      dropdown.style.display = 'none';   
+      dropdown.style.display = 'none';
     }
   });
 
@@ -73,9 +73,28 @@ function desktopDropDown(contentId) {
     button.classList.remove('dropdown-active');
   });
 
+
   var clickedButton = document.querySelector(`.dropbtn[onclick="desktopDropDown('${contentId}')"]`);
   clickedButton.classList.add('dropdown-active');
+
+
+  document.addEventListener('click', function handleClickOutside(event) {
+    var isClickInside = clickedButton.contains(event.target) || document.getElementById(contentId).contains(event.target);
+
+    if (!isClickInside) {
+      dropdowns.forEach(function(dropdown) {
+        dropdown.style.display = 'none';
+      });
+      headerBgImage.style.display = 'none';
+      dropdownButtons.forEach(function(button) {
+        button.classList.remove('dropdown-active');
+      });
+
+      document.removeEventListener('click', handleClickOutside);
+    }
+  });
 }
+
 
 
 const products = [

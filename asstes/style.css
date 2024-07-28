@@ -306,6 +306,8 @@ header{
 main{
   padding-top: 80px;
   overflow-x: hidden;
+  position: relative;
+  z-index: -1;
 }
 
 .current-page-section{
@@ -1209,6 +1211,7 @@ footer .contact-list{
     bottom: auto;
     left: 0;
     right: 0;
+    z-index: 100;
   }
 
   .header-bg-image img{
